@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switchboard Project - Prototype #1</title>
+  <link rel="stylesheet" href="styles/switchboard-styles.css" />
+</head>
+
+<body>
+
+    <h3><a href="index.html">Switchboard Project</a></h3>
+    <h1>Prototype #1</h1>
+		
+    <p>Instructions: Blue sockets are avaiable lines; gray sockets are unavailable; when a call comes in that socket flashes red; when a line is busy on a call that socket is green.</p>
+    <ul class="sockets">
+
+      <!--unavailable-->
+      <li>
+        <svg width="254" height="282" viewBox="0 0 254 282" fill="none" xmlns="http://www.w3.org/2000/svg" class="unavailable">
+        <rect width="254" height="282"/>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+        </svg>
+      </li>
+
+      <!--available-->
+      <li>
+        <svg width="254" height="282" viewBox="0 0 254 282" fill="none" xmlns="http://www.w3.org/2000/svg"  class="available">
+        <rect width="254" height="282"/>
+        <rect x="102" y="116" width="50" height="50" fill="#4E95FF"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+        </svg>
+      </li>
+
+      <!--in-use-->
+      <li>
+        <svg width="254" height="282" viewBox="0 0 254 282" fill="none" xmlns="http://www.w3.org/2000/svg"  class="in-use">
+        <rect width="254" height="282"/>
+        <rect x="102" y="116" width="50" height="50" fill="#76C85E"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+        </svg>
+      </li>
+
+      <!--ringing-->
+      <li>
+        <svg width="254" height="282" viewBox="0 0 254 282" fill="none" xmlns="http://www.w3.org/2000/svg"  class="ringing">
+        <rect width="254" height="282"/>
+        <rect x="102" y="116" width="50" height="50" fill="#941214"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+        </svg>
+      </li>
+
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+html {
+  background-color: white;
+  margin:  0 auto;
+  padding:  3%;
+}
+
+body {
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 0.8em 0;
+}
+
+h1 {
+  font-size: 1.75em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0 0 0.8em;
+}
+
+a {
+  color: #8E4600;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:active, a:focus, a:hover {
+  color: shade(#8E4600, 25%);
+}
+
+a:link {
+  color: #8E4600;
+}
+
+a:visited {
+  color: shade(#8E4600, 20%);
+}
+
+a:hover {
+  color: #C86406;
+  text-decoration: underline;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.6em 0;
+}
+
+img {
+  margin: 0;
+  max-width: 100%;
+}
+
+.sockets {
+  max-width:  90%;
+}
+
+.sockets li {
+  display:  inline-block;
+  max-width: 25%;
+  padding:  1em;
+}
+
+.unavailable {
+  fill: #C4C4C4;
+}
+
+.available {
+  fill: #BBD6FF;
+}
+
+.in-use {
+  fill:  #CBF3BD;
+}
+
+.ringing {
+  fill: #F39393;
+}
