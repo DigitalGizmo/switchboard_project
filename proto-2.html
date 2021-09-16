@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Switchboard Project - Prototype #1</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   <link rel="stylesheet" href="styles/switchboard-styles.css" />
 </head>
 
@@ -18,7 +19,7 @@
 
 
   <!-- from urban renewal --> 
-  <svg class="sockets" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+  <svg id="switchboard-grid" class="sockets" version="1.1" xmlns="http://www.w3.org/2000/svg" 
     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 1200 1000" xml:space="preserve">
 
@@ -71,7 +72,25 @@
     </g>
 
 
+    <g transform="translate(0, 600)" >    
+      <line x1="42.8837" y1="182.659" x2="42.8837" y2="305" stroke="black" stroke-width="8"/>
+      <path d="M0 63.7076V182.553H88V63.7076H51.1628V7.78021C51.1628 -0.958399 36.8372 -1.83228 36.8372 7.78021V63.7076H0Z" fill="#4D4D4D"/>
+      <text x="5" y="125" fill="white">Plug-In</text>
+    </g>
+
+    <g transform="translate(200, 600)" >
+      <line x1="50" y1="158.951" x2="50" y2="266" stroke="black" stroke-width="8"/>
+      <path d="M2 56.7645V180H93V56.7645H54.907V53.1399C54.907 44.0785 40.093 43.1723 40.093 53.1399V56.7645H2Z" fill="#4D4D4D"/>
+      <text x="5" y="125" fill="white">Unplug</text>
+    </g>
+
+
   </svg>
+
+  <script src="js/switcher.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    showPlugs();
+  </script>
 
 
 </body>
