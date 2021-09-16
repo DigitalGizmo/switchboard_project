@@ -87,10 +87,9 @@ img {
   max-width:  90%;
 }
 
-.sockets li {
-  display:  inline-block;
-  max-width: 25%;
-  padding:  1em;
+.sockets text {
+  font-size:  1.5em;
+  font-weight: bold;
 }
 
 .unavailable {
