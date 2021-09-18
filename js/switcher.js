@@ -2,7 +2,7 @@
 
 function showPlugs () {
 
-    let startX = 400, startY = 630
+    let startX = 400, startY = 630, width = 85, height = 120;
 
     const gridSvg = d3.select('#switchboard-grid');
 
@@ -15,20 +15,46 @@ function showPlugs () {
             pluggy.attr('y', +pluggy.attr('y') + d3.event.dy);
         });
 
-    // Add a plug
+    // Add plug
     gridSvg.append("svg:rect")
         .attr("id", "plug1")
-        .attr('x', startX)
+        // rectangle
+        .attr('x', startX + 200)
         .attr('y', startY)
-        .attr('width', 85)
-        .attr('height', 150)
-        .attr('rx', 15)
-        .attr('ry', 15)
-        .style("fill-opacity", 90)
-        .style("stroke", "#7d7664")
-        .style("stroke-width", 1)
+        .attr('width', width)
+        .attr('height', height)
+        .style('fill-opacity', 90)
+        .style('fill', '#4D4D4D')
+        // Plug part
+        // .append('svg:line')
+        // .style('stroke-width', 10)
+        // .attr('x1', (startY + (width/2)))
+        // .attr('y1', startY)
+        // .attr('x2', (startY + (width/2)))
+        // .attr('y2', startY - 30)
+        // // Make dragable
         .style('cursor', 'move')
-        .call(drag);
+        .call(drag)
         ;
+
+    // Mulit-part plug
+    const plug = gridSvg.append('g')
+        .attr('id', 'plug2')
+        .attr('transform', 'translate(' + startX + ', ' + startY + ')')
+        ;
+
+    plug.append('rect')
+        .attr('width', width)
+        .attr('height', height)
+        ;
+
+    plug.append('text')
+        .attr('x', 5)
+        .attr('y', height/2)
+        .attr('fill', 'white')
+        .style('font-size', 20)
+        .text('Plug-In')
+        ;
+
 
 }
