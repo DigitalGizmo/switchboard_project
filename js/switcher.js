@@ -29,10 +29,15 @@ function showPlugs () {
                 .on("drag", function(d) {
                     // plug
                     d3.select(this).attr("transform", "translate(" +
-                    (d.x = d3.event.x) + ", " + (d.y = d3.event.y) + ")")
+                    (d.x = d3.event.x) + ", " + (d.y = d3.event.y) + ")");
                     // line
-                    d3.select(phoneLines[0].attr('x1', d3.event.x + width/2))
-                    d3.select(phoneLines[0].attr('y1', d3.event.y + height))
+                    if (index === 0) {
+                        d3.select(phoneLines[0].attr('x1', d3.event.x + width/2));
+                        d3.select(phoneLines[0].attr('y1', d3.event.y + height));    
+                    } else {
+                        d3.select(phoneLines[0].attr('x2', d3.event.x + width/2));
+                        d3.select(phoneLines[0].attr('y2', d3.event.y + height));
+                    }
                 })
             );
 
