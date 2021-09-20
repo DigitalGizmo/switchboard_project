@@ -7,6 +7,12 @@
   <title>Switchboard Project - Prototype #1</title>
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <link rel="stylesheet" href="styles/switchboard-styles.css" />
+
+  <style type="text/css">
+    .line{stroke:#4D4D4D;stroke-width:14;stroke-linecap:round;stroke-miterlimit:10;}
+    .label{fill:#FFFFFF;font-family:'PTSans-Bold';}
+  </style>
+
 </head>
 
 <body>
@@ -72,19 +78,13 @@
     </g>
 
 
-    <g transform="translate(0, 600)" >    
-      <line x1="42.8837" y1="182.659" x2="42.8837" y2="305" stroke="black" stroke-width="8"/>
-      <path d="M0 63.7076V182.553H88V63.7076H51.1628V7.78021C51.1628 -0.958399 36.8372 -1.83228 36.8372 7.78021V63.7076H0Z" fill="#4D4D4D"/>
-      <text x="5" y="125" fill="white">Plug-In</text>
+    <!-- Don's proposal, regardless of how it's generated -->
+    <g transform="translate(500, 850)">
+      <line class="line" x1="42" y1="-20" x2="42" y2="160"/>
+      <rect width="84" height="120" fill="#4D4D4D" />
+      <text class="label" x="42" y="60" text-anchor="middle">UNUPLUG</text> 
     </g>
-
-    <g transform="translate(200, 600)" >
-      <line x1="50" y1="158.951" x2="50" y2="266" stroke="black" stroke-width="8"/>
-      <path d="M2 56.7645V180H93V56.7645H54.907V53.1399C54.907 44.0785 40.093 43.1723 40.093 53.1399V56.7645H2Z" fill="#4D4D4D"/>
-      <text x="5" y="125" fill="white">Unplug</text>
-    </g>
-
-
+ 
   </svg>
 
   <script src="js/switcher.js" type="text/javascript"></script>

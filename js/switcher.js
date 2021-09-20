@@ -2,7 +2,7 @@
 
 function showPlugs () {
 
-    let startX = 400, startY = 660, width = 85, height = 120;
+    let startX = 10, startY = 660, width = 84, height = 120;
 
     const plugs = [null, null];
 
@@ -37,35 +37,21 @@ function showPlugs () {
         .style('fill', '#4D4D4D')
         ;
 
-    plugs[0].append('text')
-        .attr('x', 5)
-        .attr('y', height/2)
-        .attr('fill', 'white')
-        .style('font-size', 20)
-        .text('Plug-In')
-        ;
-
     plugs[0].append('line')
-        .style('stroke', '#4D4D4D')
-        .style('stroke-width', 14)
+        .attr('class', 'line')
         .attr('x1', (width/2))
-        .attr('y1', 0)
+        .attr('y1', -50)
         .attr('x2', (width/2))
-        .attr('y2', - 50)
+        .attr('y2', height + 7)
         ;
 
-    plugs[0].append('circle')
-        .style('fill', '#4D4D4D')
-        .attr('cx', width/2)
-        .attr('cy', -50)
-        .attr('r', 7)
-        ;
 
-    plugs[0].append('circle')
-        .style('fill', '#4D4D4D')
-        .attr('cx', width/2)
-        .attr('cy', height)
-        .attr('r', 7)
+    plugs[0].append('text')
+        .attr('class', 'label')
+        .attr('x', width/2)
+        .attr('y', height/2)
+        .attr('text-anchor', 'middle')
+        .text('PLUG-IN')
         ;
 
 }
