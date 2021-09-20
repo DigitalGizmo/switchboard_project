@@ -33,10 +33,10 @@ function showPlugs () {
                     // line
                     if (index === 0) {
                         d3.select(phoneLines[0].attr('x1', d3.event.x + width/2));
-                        d3.select(phoneLines[0].attr('y1', d3.event.y + height));    
+                        d3.select(phoneLines[0].attr('y1', d3.event.y + height + 10));    
                     } else {
                         d3.select(phoneLines[0].attr('x2', d3.event.x + width/2));
-                        d3.select(phoneLines[0].attr('y2', d3.event.y + height));
+                        d3.select(phoneLines[0].attr('y2', d3.event.y + height + 10));
                     }
                 })
             );
@@ -77,9 +77,9 @@ function showPlugs () {
             })
             .attr('class', 'line')
             .attr('x1', plugs[plug1index].datum().x + width/2)
-            .attr('y1', plugs[plug1index].datum().y + height)
+            .attr('y1', plugs[plug1index].datum().y + height + 10)
             .attr('x2', plugs[plug2index].datum().x + width/2)
-            .attr('y2', plugs[plug2index].datum().y + height)
+            .attr('y2', plugs[plug2index].datum().y + height + 10)
             ;
 
     }
