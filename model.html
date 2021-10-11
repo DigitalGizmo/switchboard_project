@@ -7,92 +7,188 @@
   <title>Switchboard Project - Prototype #1</title>
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <link rel="stylesheet" href="styles/switchboard-styles.css" />
-
-  <style type="text/css">
-    .jack{stroke:#4D4D4D;stroke-width:14;stroke-linecap:round;stroke-miterlimit:10;}
-    .label{fill:#FFFFFF;font-family:'PTSans-Bold';}
-    .line{stroke:#4D4D4D;stroke-width:6;}
-  </style>
-
 </head>
 
 <body>
 
-  <h3><a href="index.html">Switchboard Project</a></h3>
-  <h1>Prototype #2</h1>
+<header>
+  <h5><a href="index.html">Switchboard Project</a></h5>
+  <h1>You're the Operator!</h1>
+</header>
       
-  <p>Instructions: Blue sockets are avaiable lines; gray sockets are unavailable; when a call comes in that socket flashes red; when a line is busy on a call that socket is green. juliet was here.</p>
-  <ul class="sockets">
+<div id="wrapper">      
+  <div class="how-to">
 
+    <h3>Your Job</h3>
+    <p>To pick up a call:<br/>
+    Drag the plug into the flashing/ringing socket.</p>
+    <p>To connect a call:<br/>
+    Drag the other end of the cable into the requested socket.</p>
 
-  <!-- from urban renewal --> 
-  <svg id="switchboard-grid" class="sockets" version="1.1" xmlns="http://www.w3.org/2000/svg" 
-    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    viewBox="0 0 1200 1000" xml:space="preserve">
+    <h3>Key</h3>
+    <p>Blue sockets are avaiable lines; gray sockets are unavailable; when a call comes in that socket flashes red; when a line is busy on a call that socket is green.</p>
 
-    <g transform="translate(0, 0)" class="unavailable">
-      <rect width="254" height="282"/>
-      <text x="100" y="50" fill="black">Sam</text>
-      <text x="100" y="75" fill="black">521</text>
-      <rect x="102" y="116" width="50" height="50" fill="#919090"/>
-      <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
-    </g>
+  </div>
 
-    <g transform="translate(300, 0)" class="in-use">
-      <rect width="254" height="282"/>
-      <text x="100" y="50" fill="black">Eve</text>
-      <text x="100" y="75" fill="black">821</text>
-      <rect x="102" y="116" width="50" height="50" fill="#919090"/>
-      <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
-    </g>
+  <div id="panel">
 
-    <g transform="translate(600, 0)" class="ringing">
-      <rect width="254" height="282"/>
-      <text x="100" y="50" fill="black">Max</text>
-      <text x="100" y="75" fill="black">543</text>
-      <rect x="102" y="116" width="50" height="50" fill="#919090"/>
-      <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
-    </g>
+    <!-- Static sockets -->
+    <svg id="switchboard-grid" class="sockets" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 1420 1200" xml:space="preserve">
 
-    <g transform="translate(0, 300)" class="available">
-      <rect width="254" height="282"/>
-      <text x="100" y="50" fill="black">Ann</text>
-      <text x="100" y="75" fill="black">977</text>
-      <rect x="102" y="116" width="50" height="50" fill="#919090"/>
-      <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
-    </g>
+      <g transform="translate(0, 0)" class="unavailable">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Sam</text>
+        <text x="100" y="75" fill="black">521</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
 
-    <g transform="translate(300, 300)" class="unavailable">
-      <rect width="254" height="282"/>
-      <text x="100" y="50" fill="black">Ben</text>
-      <text x="100" y="75" fill="black">476</text>
-     <rect x="102" y="116" width="50" height="50" fill="#919090"/>
-      <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
-    </g>
+      <g transform="translate(275, 0)" class="in-use">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Eve</text>
+        <text x="100" y="75" fill="black">821</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
 
-    <g transform="translate(600, 300)" class="available">
-      <rect width="254" height="282"/>
-      <text x="100" y="50" fill="black">Sue</text>
-      <text x="100" y="75" fill="black">989</text>
-      <rect x="102" y="116" width="50" height="50" fill="#919090"/>
-      <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
-    </g>
+      <g transform="translate(550, 0)" class="ringing">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Max</text>
+        <text x="100" y="75" fill="black">543</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
 
+      <g transform="translate(825, 0)" class="available">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Ann</text>
+        <text x="100" y="75" fill="black">977</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
 
-    <!-- Static plug model -->
-    <g transform="translate(500, 850)">
-      <line class="jack" x1="42" y1="-20" x2="42" y2="160"/>
-      <rect width="84" height="120" fill="#4D4D4D" />
-      <text class="label" x="42" y="60" text-anchor="middle">UNUPLUG</text> 
-    </g>
- 
-  </svg>
+      <g transform="translate(1100, 0)" class="unavailable">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Ben</text>
+        <text x="100" y="75" fill="black">476</text>
+       <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
 
-  <script src="js/switcher.js" type="text/javascript"></script>
+      <g transform="translate(0, 300)" class="available">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Sue</text>
+        <text x="100" y="75" fill="black">989</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(275, 300)" class="unavailable">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Ben</text>
+        <text x="100" y="75" fill="black">476</text>
+       <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(550, 300)" class="available">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Sue</text>
+        <text x="100" y="75" fill="black">989</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(825, 300)" class="unavailable">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Ben</text>
+        <text x="100" y="75" fill="black">476</text>
+       <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(1100, 300)" class="available">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Sue</text>
+        <text x="100" y="75" fill="black">989</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(0, 600)" class="unavailable">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Ben</text>
+        <text x="100" y="75" fill="black">476</text>
+       <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(275, 600)" class="available">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Sue</text>
+        <text x="100" y="75" fill="black">989</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(550, 600)" class="available">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Ann</text>
+        <text x="100" y="75" fill="black">977</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(825, 600)" class="available">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Sue</text>
+        <text x="100" y="75" fill="black">989</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>
+
+      <g transform="translate(1100, 600)" class="available">
+        <rect width="250" height="275"/>
+        <text x="100" y="50" fill="black">Ann</text>
+        <text x="100" y="75" fill="black">977</text>
+        <rect x="102" y="116" width="50" height="50" fill="#919090"/>
+        <circle cx="126.5" cy="141.5" r="7.5" fill="black"/>
+      </g>    
+          
+      <!-- Static plugs -->
+      <g transform="translate(350, 950)">
+        <line class="jack" x1="42" y1="-20" x2="42" y2="160"/>
+        <rect width="84" height="120" fill="#4D4D4D" />
+        <text class="label" x="42" y="60" text-anchor="middle">PLUG IN</text> 
+      </g>
+
+      <g transform="translate(450, 950)">
+        <line class="jack" x1="42" y1="-20" x2="42" y2="160"/>
+        <rect width="84" height="120" fill="#4D4D4D" />
+        <text class="label" x="42" y="60" text-anchor="middle">PLUG IN</text> 
+      </g>
+
+      <g transform="translate(700, 950)">
+        <line class="jack" x1="42" y1="-20" x2="42" y2="160"/>
+        <rect width="84" height="120" fill="#4D4D4D" />
+        <text class="label" x="42" y="60" text-anchor="middle">PLUG IN</text> 
+      </g>
+
+      <g transform="translate(800, 950)">
+        <line class="jack" x1="42" y1="-20" x2="42" y2="160"/>
+        <rect width="84" height="120" fill="#4D4D4D" />
+        <text class="label" x="42" y="60" text-anchor="middle">PLUG IN</text> 
+      </g> 
+    </svg>
+  </div> <!-- /panel -->
+</div><!-- /wrapper -->
+
+<!--   <script src="js/switcher.js" type="text/javascript"></script>
   <script type="text/javascript">
     showPlugs();
-  </script>
-
+  </script> -->
 
 </body>
 
