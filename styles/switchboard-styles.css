@@ -120,11 +120,40 @@ header {
   grid-row:  2;  
 }
 
-.key ul li {
-  list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 30"><rect fill="blue"  width="20" height="30"/></svg>');
+.key ul {
+  list-style-type: none;
   margin-left: 1em;
 }
 
+.key ul li {
+  position: relative;
+}
+
+.key ul li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 12px; 
+  height: 15px;
+  left: -15px;
+  top: 0.25em;
+}
+
+.key ul li.available:before {
+  background: #BBD6FF;
+}
+
+.key ul li.unavailable:before {
+  background: #C4C4C4;
+}
+
+.key ul li.ringing:before {
+  background: #F39393;
+}
+
+.key ul li.in-use:before {
+   background: #CBF3BD;
+}
 
 /*//PLUGS//*/
 
