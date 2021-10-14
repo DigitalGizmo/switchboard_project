@@ -33,7 +33,7 @@ h1 {
 h3 {
   font-size: 1.25em;
   font-weight: bold;
-  margin-bottom: 0;
+  margin: 0 0 .5em 0;
 }
 
 p {
@@ -90,26 +90,41 @@ header {
 #wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 20px;
   margin-top:  20px;
 }
 
 #panel {
   grid-column: 1/4;
-  grid-row:  1;
+  grid-row:  span 2;
   background-color: aliceblue;
   border: solid 1px #bbd6ff;
   padding: 2%;
   text-align: center;
 }
 
-.how-to  {
-  grid-column: 4;
-  grid-row:  1;  
+.how-to, .key {
   background-color: aliceblue;
   border: solid 1px #bbd6ff;
   padding: 12px;
 }
+
+.how-to  {
+  grid-column: 4;
+  grid-row:  1;
+}
+
+.key  {
+  grid-column: 4;
+  grid-row:  2;  
+}
+
+.key ul li {
+  list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 30"><rect fill="blue"  width="20" height="30"/></svg>');
+  margin-left: 1em;
+}
+
 
 /*//PLUGS//*/
 
