@@ -104,7 +104,7 @@ header {
   text-align: center;
 }
 
-.how-to, .key {
+.how-to, .captions {
   background-color: aliceblue;
   border: solid 1px #bbd6ff;
   padding: 12px;
@@ -115,21 +115,21 @@ header {
   grid-row:  1;
 }
 
-.key  {
+.captions  {
   grid-column: 4;
   grid-row:  2;  
 }
 
-.key ul {
+.how-to ul {
   list-style-type: none;
   margin-left: 1em;
 }
 
-.key ul li {
+.how-to ul li {
   position: relative;
 }
 
-.key ul li:before {
+.how-to ul li:before {
   content: '';
   display: block;
   position: absolute;
@@ -139,20 +139,20 @@ header {
   top: 0.25em;
 }
 
-.key ul li.available:before {
+/*.how-to ul li.available:before {
   background: #BBD6FF;
 }
 
-.key ul li.unavailable:before {
+.how-to ul li.unavailable:before {
   background: #C4C4C4;
+}*/
+
+.how-to ul li.ringing:before {
+  background: red;
 }
 
-.key ul li.ringing:before {
-  background: #F39393;
-}
-
-.key ul li.in-use:before {
-   background: #CBF3BD;
+.how-to ul li.in-use:before {
+   background: #64BC46;
 }
 
 /*//PLUGS//*/
@@ -181,7 +181,7 @@ header {
 }
 
 .sockets text {
-  font-size:  1.5em;
+  font-size:  2em;
   font-weight: bold;
 }
 
@@ -189,10 +189,33 @@ header {
   font-size: 1.2em;
 }
 
-.unavailable {
-  fill: #C4C4C4;
+.led-light-green {
+  fill:#64BC46;
+  stroke:#919090;
+  stroke-width:3;
+  stroke-miterlimit:10;
 }
 
+.led-light-red {
+  fill:red;
+  stroke:#919090;
+  stroke-width:3;
+  stroke-miterlimit:10;
+}
+
+.led-light-unlit {
+  fill:gray;
+  stroke:#919090;
+  stroke-width:3;
+  stroke-miterlimit:10;
+}
+
+.socket-plate {
+  fill: #e1e1e1;
+}
+
+
+/* obsolete stles */
 .available {
   fill: #BBD6FF;
 }
